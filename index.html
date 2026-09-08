@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>プライベート動画ギャラリー</title>
   <style>
-    /* スマホ画面用に全体を最適化 */
+    /* スマホ用にデザインを最適化 */
     body {
       background-color: #f4f6f8 !important;
       color: #333333 !important;
@@ -13,8 +13,7 @@
       margin: 0;
       padding: 16px;
     }
-    
-    /* タイトルが改行されないようにサイズ調整 */
+
     h1 {
       font-size: 1.3rem;
       text-align: center;
@@ -22,14 +21,13 @@
       color: #1a1a1a;
     }
 
-    /* 動画カードのデザイン */
     .video-card {
       background: #ffffff;
       border-radius: 12px;
       padding: 16px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       max-width: 500px;
-      margin: 0 auto;
+      margin: 0 auto 20px auto;
     }
 
     .video-card h3 {
@@ -38,14 +36,14 @@
       color: #444;
     }
 
-    /* スマホで潰れないように16:9の高さをしっかり確保 */
     .video-container {
       position: relative;
       width: 100%;
-      padding-top: 56.25%; /* 横長動画の標準比率 */
+      padding-top: 56.25%; /* 16:9の比率 */
       background-color: #000;
       border-radius: 8px;
       overflow: hidden;
+      margin-bottom: 12px;
     }
 
     .video-container iframe {
@@ -56,6 +54,25 @@
       height: 100%;
       border: none;
     }
+
+    /* 再生ボタンのデザイン */
+    .play-btn {
+      display: block;
+      width: 100%;
+      padding: 12px 0;
+      background-color: #1a73e8;
+      color: #ffffff !important;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 0.95rem;
+    }
+
+    .play-btn:active {
+      background-color: #1557b0;
+    }
   </style>
 </head>
 <body>
@@ -63,10 +80,12 @@
   <h1>🎬 プライベート動画ギャラリー</h1>
 
   <div class="video-card">
-    <h3>お気に入り動画</h3>
+    <h3>お気に入り動画 1</h3>
     <div class="video-container">
-      <iframe src="https://drive.google.com/file/d/1yhIwDsNCvOJ-k5aZzXlZeVM8qofwucTH/preview" allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/★ここに動画IDを入れる★/preview"></iframe>
     </div>
+    <!-- タップするとアプリなしでも高画質全画面で再生できるボタン -->
+    <a href="https://drive.google.com/file/d/1yhIwDsNCvOJ-k5aZzXlZeVM8qofwucTH/view" target="_blank" class="play-btn">▶ 高画質・全画面で再生する</a>
   </div>
 
 </body>
