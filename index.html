@@ -5,45 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>プライベート動画ギャラリー</title>
   <style>
+    /* ▼ ここはデザイン（色やレイアウト）の設定です */
     body {
-      font-family: sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #f5f5f5;
+      background-color: #ffffff !important; /* 背景色を強制的に「白」にする */
+      color: #333333 !important;            /* 文字の色を「濃いグレー」にする */
+      font-family: sans-serif;              /* 読みやすいフォントにする */
+      padding: 20px;                        /* 画面の端に少し余白を作る */
+      margin: 0;
     }
-    h1 { text-align: center; color: #333; }
-    .video-card {
-      background: white;
-      padding: 15px;
-      margin-bottom: 25px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .video-container {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%; /* 16:9 の比率 */
-      margin-bottom: 10px;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 4px;
+    .card {
+      border: 1px solid #ccc;               /* 動画を入れる枠線を引く */
+      border-radius: 8px;                   /* 枠線の角を丸くする */
+      padding: 15px;                        /* 枠の中の余白 */
+      margin-top: 20px;                     /* 上との間隔 */
+      background-color: #f9f9f9;            /* 枠の中の背景色 */
     }
   </style>
 </head>
 <body>
 
-  <h1>🎬 プライベート動画ギャラリー</h1>
+  <!-- ▼ ここから下が画面に実際に表示される「文章や図」です -->
+  <h1>🎬 プライベート動画ギャラリー</h1> <!-- 一番大きな見出し -->
+  <p>サイトの作成に成功しました！</p> <!-- 普通の文章 -->
 
-  <div class="video-card">
-    <h3>サンプル動画</h3>
-    <p>ここにGoogleドライブの動画を埋め込みます。</p>
+  <div class="card">
+    <h3>サンプル動画エリア</h3>
+    <p>ここにGoogleドライブの動画が入ります。</p>
   </div>
 
 </body>
