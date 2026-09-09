@@ -157,7 +157,7 @@ h1 {
   position: absolute;
   bottom: 4px;
   right: 4px;
-  background: rgba(0, 0, 0, 0.3);   /* ★透け感をかなり強めに（0.4） */
+  background: rgba(0, 0, 0, 0.5);   /* ★透け感をかなり強めに（0.4） */
   color: rgba(255, 255, 255, 0.9); /* ★文字色も少し透けさせて馴染ませる */
   font-size: 0.45rem;              /* ★さらに極小サイズへ（0.45rem） */
   font-weight: 500;                /* ★文字の太さも少し細く */
