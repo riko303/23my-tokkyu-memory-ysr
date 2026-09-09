@@ -28,5 +28,15 @@ const videoData = [
     category: "power",
     driveId: "1upNAI6u-Z3ys28S3te3vMbwzf_ILQl3c"
   },
+  
+   {
+    title: "『Big Ta-Da!』from from BULLET TRAIN ARENA TOUR 2025-2026「REAL?」",
+    desc: "ハニワみたいな曲で草🌱めっちゃ可愛くて好き💕",
+    thumb: "IMG_5302.jpeg",
+    time: "04:20",
+    isNew: false,
+    category: "good",
+    driveId: "11B-cGvYaQ6hYEehQSeryuBAW8ORip1Qg"
+  },
 
 ];
