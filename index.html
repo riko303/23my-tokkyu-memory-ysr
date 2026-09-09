@@ -31,62 +31,66 @@
   </div>
 
 
-  <!-- ===================================================
+    <!-- ===================================================
        🏷️ 2. ジャンル切り替えタブ
   =================================================== -->
   <div class="tab-container">
     <button class="tab-btn active" onclick="filterCategory('all', this)">✨ すべて</button>
-    <button class="tab-btn" onclick="filterCategory('power', this)">😆元気出る</button>
-    <button class="tab-btn" onclick="filterCategory('cool', this)">😎かっこいい</button>
- 
+    <button class="tab-btn" onclick="filterCategory('power', this)">😆 元気出る</button>
+    <button class="tab-btn" onclick="filterCategory('cool', this)">😎 かっこいい</button>
+  </div> <!-- ★ 閉じタグを追加しました -->
 
 
   <!-- ===================================================
        🎬 3. 動画一覧（2列グリッド）
   =================================================== -->
-  <div class="video-grid"></div>
+  <!-- ★ id="videoGrid" を追加しました -->
+  <div class="video-grid" id="videoGrid"></div>
 
-  <!-- 4. データファイルと読み込み用プログラムを追加 -->
-  <script src="videos.js?v=1"></script>
-  <script>
-    // videos.js のデータからカードを自動作成するプログラム
-    const grid = document.getElementById('videoGrid');
-    
-    videoData.forEach(video => {
-      const newBadge = video.isNew ? '<span class="badge-new">NEW!</span>' : '';
-      
-      const cardHtml = `
-        <div class="video-card" data-category="${video.category}">
-          <div class="thumb-wrapper">
-            <img src="${video.thumb}" alt="サムネイル" class="video-thumb">
-            ${newBadge}
-            <span class="badge-time">${video.time}</span>
-          </div>
-          <div>
-            <div class="video-title">${video.title}</div>
-            <div class="video-desc">${video.desc}</div>
-          </div>
-          <a href="https://drive.google.com/file/d/${video.driveId}/view" target="_blank" class="play-btn">
-            <span>▶</span> 再生
-          </a>
-        </div>
-      `;
-      grid.insertAdjacentHTML('beforeend', cardHtml);
-    });
-
-   
 
   <!-- ===================================================
-       ⚡ 4. タブ切り替え用プログラム (JavaScript)
+       ⚡ 4. データ読み込み＆タブ切り替えプログラム
   =================================================== -->
+  <script src="videos.js?v=2"></script>
   <script>
+    // 画面が読み込まれたら動画カードを動的に作成
+    const grid = document.getElementById('videoGrid');
+    
+    if (typeof videoData !== 'undefined' && grid) {
+      videoData.forEach(video => {
+        const newBadge = video.isNew ? '<span class="badge-new">NEW!</span>' : '';
+        const descText = video.desc ? `<div class="video-desc">${video.desc}</div>` : '';
+        
+        const cardHtml = `
+          <div class="video-card" data-category="${video.category}">
+            <div class="thumb-wrapper">
+              <img src="${video.thumb}" alt="サムネイル" class="video-thumb">
+              ${newBadge}
+              <span class="badge-time">${video.time}</span>
+            </div>
+            <div>
+              <div class="video-title">${video.title}</div>
+              ${descText}
+            </div>
+            <a href="https://drive.google.com/file/d/${video.driveId}/view" target="_blank" class="play-btn">
+              <span>▶</span> 再生
+            </a>
+          </div>
+        `;
+        grid.insertAdjacentHTML('beforeend', cardHtml);
+      });
+    }
+
+    // タブ切り替え機能
     function filterCategory(category, btnElement) {
       // 1. すべてのタブから active クラスを外す
       const tabs = document.querySelectorAll('.tab-btn');
       tabs.forEach(tab => tab.classList.remove('active'));
 
       // 2. 押されたタブだけに active クラスをつける
-      btnElement.classList.add('active');
+      if (btnElement) {
+        btnElement.classList.add('active');
+      }
 
       // 3. 動画カードの表示・非表示を切り替える
       const cards = document.querySelectorAll('.video-card');
