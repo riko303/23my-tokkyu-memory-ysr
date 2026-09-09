@@ -49,19 +49,19 @@ h1 {
   background-color: #fff0f3;
 }
 
-/* 動画タイトル */
+/* 動画タイトル（最後まで全部表示する設定） */
 .video-title {
   font-size: 0.85rem;
   font-weight: bold;
   color: #333333;
   margin-bottom: 4px;
-  line-height: 1.3;
-  /* 2行を超えたら自動で省略（...）する設定 */
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  line-height: 1.35;
+  
+  /* 行数制限を解除して全表示 */
+  white-space: normal;
+  word-break: break-word;
 }
+
 
 /* 説明文 */
 .video-desc {
