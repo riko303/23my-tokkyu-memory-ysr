@@ -41,7 +41,7 @@ const videoData = [
 
 {
     title: "『Draw イッパツ！』from from BULLET TRAIN ARENA TOUR 2025-2026「REAL?」",
-    desc: "東京ドーム公演発表の直後の一曲。泣いてるメンバーもちらほら。みんな幸せそうな顔してて泣ける😭",
+    desc: "東京ドーム公演発表の直後で泣いてるメンバーもちらほら。みんな幸せそうな顔してて泣ける😭",
     thumb: "IMG_5307.jpeg",
     time: "03:16",
     isNew: false,
