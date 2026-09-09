@@ -18,5 +18,15 @@ const videoData = [
     category: "power",
     driveId: "1U9sf85PlSCW3_COvKLORZYlD6r1wrw8T"
   },
+  
+    {
+    title: "『バッタマン』from BULLET TRAIN ARENA TOUR 2024-2025 「Joker」",
+    desc: "タカシが体調不良でお休みしてたときのライブ。ハルくん大暴れ！",
+    thumb: "IMG_5299.jpeg",
+    time: "04:28",
+    isNew: false,
+    category: "power",
+    driveId: "1upNAI6u-Z3ys28S3te3vMbwzf_ILQl3c"
+  },
 
 ];
