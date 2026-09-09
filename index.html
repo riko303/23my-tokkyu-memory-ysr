@@ -44,38 +44,35 @@
   <!-- ===================================================
        🎬 3. 動画一覧（2列グリッド）
   =================================================== -->
-  <div class="video-grid">
+  <div class="video-grid"></div>
 
-    <!-- 動画カード1：元気出るカテゴリ (data-category="power") -->
-    <div class="video-card" data-category="travel">
-      <div class="thumb-wrapper">
-        <img src="thumb1.jpg" alt="サムネイル" class="video-thumb">
-        <span class="badge-new">NEW!</span>
-        <span class="badge-time">01:25</span>
-      </div>
-      <div>
-        <div class="video-title">海での思い出</div>
-        <div class="video-desc">2024夏旅行</div>
-      </div>
-      <a href="https://drive.google.com/file/d/★動画ID1★/view" target="_blank" class="play-btn">
-        <span>▶</span> 再生
-      </a>
-    </div>
-
-    <!-- 動画カード2：かっこいいカテゴリ (data-category="cool") -->
-    <div class="video-card" data-category="event">
-      <div class="thumb-wrapper">
-        <img src="thumb2.jpg" alt="サムネイル" class="video-thumb">
-        <span class="badge-time">00:45</span>
-      </div>
-      <div>
-        <div class="video-title">バーベキュー大会</div>
-        <div class="video-desc">お肉タイム</div>
-      </div>
-      <a href="https://drive.google.com/file/d/★動画ID2★/view" target="_blank" class="play-btn">
-        <span>▶</span> 再生
-      </a>
-    </div>
+  <!-- 4. データファイルと読み込み用プログラムを追加 -->
+  <script src="videos.js?v=1"></script>
+  <script>
+    // videos.js のデータからカードを自動作成するプログラム
+    const grid = document.getElementById('videoGrid');
+    
+    videoData.forEach(video => {
+      const newBadge = video.isNew ? '<span class="badge-new">NEW!</span>' : '';
+      
+      const cardHtml = `
+        <div class="video-card" data-category="${video.category}">
+          <div class="thumb-wrapper">
+            <img src="${video.thumb}" alt="サムネイル" class="video-thumb">
+            ${newBadge}
+            <span class="badge-time">${video.time}</span>
+          </div>
+          <div>
+            <div class="video-title">${video.title}</div>
+            <div class="video-desc">${video.desc}</div>
+          </div>
+          <a href="https://drive.google.com/file/d/${video.driveId}/view" target="_blank" class="play-btn">
+            <span>▶</span> 再生
+          </a>
+        </div>
+      `;
+      grid.insertAdjacentHTML('beforeend', cardHtml);
+    });
 
    
 
