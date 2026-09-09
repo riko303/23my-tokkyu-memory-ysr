@@ -5,7 +5,7 @@ const videoData = [
     desc: "ほぼリョウガとマサヒロしか映ってない",
     thumb: "photo-output.png",
     time: "04:36",
-    isNew: true, // NEWマークをつける場合は true、つけない場合は false
+    isNew: false, // NEWマークをつける場合は true、つけない場合は false
     category: "power", // ジャンル
     driveId: "1yhIwDsNCvOJ-k5aZzXlZeVM8qofwucTH"
   },
@@ -14,7 +14,7 @@ const videoData = [
     desc: "全員の変顔に注目！",
     thumb: "IMG_5294.jpeg",
     time: "03:48",
-    isNew: true,
+    isNew: false,
     category: "power",
     driveId: "1U9sf85PlSCW3_COvKLORZYlD6r1wrw8T"
   },
