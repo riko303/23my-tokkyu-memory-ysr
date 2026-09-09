@@ -212,7 +212,7 @@ h1 {
 }
 
 /* ===================================================
-   🎬 画面内で動画再生（モーダル表示）完全対応版
+   🎬 画面内で動画再生（Googleドライブ操作UI崩れ防止版）
 =================================================== */
 .video-modal {
   display: none;
@@ -221,7 +221,7 @@ h1 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 10000;
   align-items: center;
   justify-content: center;
@@ -237,18 +237,19 @@ h1 {
 .modal-content {
   position: relative;
   width: 100%;
-  max-width: 560px;
+  max-width: 600px;
   background: #000000;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
   overflow: hidden;
 }
 
+/* ★ 操作バーが出ても映像がズレないよう、高さを柔軟に調整 */
 .modal-video-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9のアスペクト比 */
-  height: 0;
+  height: 65vh; /* スマホ画面の高さの65%を確保してUIが出てもみ出さないようにする */
+  max-height: 400px;
   background: #000000;
 }
 
@@ -261,23 +262,23 @@ h1 {
   border: 0;
 }
 
-/* ✕ 閉じるボタン（右上に綺麗に配置） */
+/* ✖ 閉じるボタン（UIと被らないように右上に固定） */
 .modal-close-btn {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   color: #ff4757;
   border: none;
   font-size: 1.1rem;
   font-weight: bold;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 10001;
+  z-index: 10002; /* UIより前面に表示 */
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
