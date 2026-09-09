@@ -6,7 +6,7 @@ const videoData = [
     thumb: "photo-output.png",
     time: "04:36",
     isNew: false, // NEWマークをつける場合は true、つけない場合は false
-    category: "power", // ジャンル
+    category: "", // ジャンル
     driveId: "1yhIwDsNCvOJ-k5aZzXlZeVM8qofwucTH"
   },
   {
