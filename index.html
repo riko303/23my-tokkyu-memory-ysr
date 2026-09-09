@@ -98,22 +98,27 @@
       });
     }
 
-    // 🎬 画面内で動画を再生する機能
+        // 🎬 画面内で動画を再生する機能（ダイレクト再生）
     function playVideo(driveId) {
       const modal = document.getElementById('videoModal');
-      const iframe = document.getElementById('modalIframe');
-      // Googleドライブの埋め込み用URL（/preview）をセット
-      iframe.src = `https://drive.google.com/file/d/${driveId}/preview`;
+      const video = document.getElementById('modalVideo');
+      
+      // Googleドライブの動画ダイレクト再生URL
+      video.src = `https://lh3.googleusercontent.com/d/${driveId}`;
       modal.classList.add('active');
+      video.play();
     }
 
     // ✖ 動画を閉じる機能
     function closeVideo() {
       const modal = document.getElementById('videoModal');
-      const iframe = document.getElementById('modalIframe');
-      iframe.src = ''; // 動画をストップする
+      const video = document.getElementById('modalVideo');
+      
+      video.pause();
+      video.src = ''; // 動画をストップ＆クリア
       modal.classList.remove('active');
     }
+
 
     // タブ切り替え機能
     function filterCategory(category, btnElement) {
