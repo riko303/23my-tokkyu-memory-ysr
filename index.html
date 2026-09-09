@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>プライベート動画ギャラリー</title>
+  <title>超特急動画ギャラリー</title>
   <style>
     body {
       background-color: #f4f6f8 !important;
@@ -21,36 +21,47 @@
       letter-spacing: 0.05em;
     }
 
-    /* おしゃれなカードデザイン */
+    /* 動画カード全体のデザイン */
     .video-card {
       background: #ffffff;
       border-radius: 16px;
       padding: 16px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
       max-width: 500px;
-      margin: 0 auto 16px auto;
+      margin: 0 auto 20px auto;
       border: 1px solid #eaeaea;
     }
 
-    /* サムネイル画像のスタイル */
+    /* サムネイル画像 */
     .video-thumb {
       width: 100%;
       height: auto;
       border-radius: 10px;
       margin-bottom: 12px;
       display: block;
-      aspect-ratio: 16 / 9; /* 横長キレイに収める */
+      aspect-ratio: 16 / 9;
       object-fit: cover;
+      background-color: #eee;
     }
 
+    /* 動画タイトル */
     .video-title {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       font-weight: bold;
       color: #222222;
-      margin-bottom: 14px;
+      margin-bottom: 6px;
+      line-height: 1.4;
     }
 
-    /* スマートな再生ボタン */
+    /* 動画の説明文や日付（任意） */
+    .video-desc {
+      font-size: 0.85rem;
+      color: #666666;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    /* 再生ボタン */
     .play-btn {
       display: flex;
       align-items: center;
@@ -77,17 +88,42 @@
 
   <h1>超特急動画ギャラリー</h1>
 
-  <!-- 動画カード 1 -->
+  <!-- ===================================================
+       【1本目の動画】ここから
+  =================================================== -->
   <div class="video-card">
-    <!-- ▼ アップロードした画像の名前をここに入れます（例: thumb1.jpg） -->
+    <!-- 1. サムネイル画像（画像がない場合はこの行を消してもOK） -->
     <img src="photo-output.png" alt="サムネイル" class="video-thumb">
     
-    <div class="video-title">『Believe×Believe』 from BULLET TRAIN ARENA TOUR 2025-2026 「REAL ?」</div>
+    <!-- 2. 動画のタイトル -->
+    <div class="video-title">タイトル：『Believe×Believe』 from BULLET TRAIN ARENA TOUR 2025-2026 「REAL ?」</div>
 
+    <!-- 3. 簡単な説明や日付（不要なら消してもOK） -->
+    <div class="video-desc">ほぼリョウガしか映ってない</div>
+
+    <!-- 4. 再生リンク（動画IDを入れる） -->
     <a href="https://drive.google.com/file/d/1yhIwDsNCvOJ-k5aZzXlZeVM8qofwucTH/view" target="_blank" class="play-btn">
       <span>▶</span> 動画を再生する
     </a>
   </div>
+  <!-- 【1本目の動画】ここまで -->
+
+
+  <!-- ===================================================
+       【2本目の動画】ここから（不要なら丸ごと消すか書き換える）
+  =================================================== -->
+  <div class="video-card">
+    <img src="thumb2.jpg" alt="サムネイル" class="video-thumb">
+    
+    <div class="video-title">タイトル：バーベキュー大会</div>
+
+    <div class="video-desc">肉を焼いているところのショート動画</div>
+
+    <a href="https://drive.google.com/file/d/★2本目の動画ID★/view" target="_blank" class="play-btn">
+      <span>▶</span> 動画を再生する
+    </a>
+  </div>
+  <!-- 【2本目の動画】ここまで -->
 
 </body>
 </html>
