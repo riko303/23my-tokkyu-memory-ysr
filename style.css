@@ -1,0 +1,78 @@
+/* style.css (見た目の設定ファイル) */
+body {
+  background-color: #f4f6f8 !important;
+  color: #333333 !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 20px 16px;
+}
+
+h1 {
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 10px 0 24px 0;
+  color: #1a1a1a;
+  letter-spacing: 0.05em;
+}
+
+/* 動画カード全体のデザイン */
+.video-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  max-width: 500px;
+  margin: 0 auto 20px auto;
+  border: 1px solid #eaeaea;
+}
+
+/* サムネイル画像 */
+.video-thumb {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background-color: #eee;
+}
+
+/* 動画タイトル */
+.video-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #222222;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+/* 動画の説明文や日付 */
+.video-desc {
+  font-size: 0.85rem;
+  color: #666666;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+/* 再生ボタン */
+.play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 0;
+  background: linear-gradient(135deg, #1a73e8, #0d52bf);
+  color: #ffffff !important;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
+}
+
+.play-btn span {
+  margin-right: 6px;
+}
