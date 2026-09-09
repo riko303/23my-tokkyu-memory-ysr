@@ -155,17 +155,19 @@ h1 {
 /* 右下の「再生時間」バッジ */
 .badge-time {
   position: absolute;
-  bottom: 5px;
-  right: 5px;
-  background: rgba(0, 0, 0, 0.3); /* ★数字を小さくして透け感を強く（0.55） */
-  color: #ffffff;
-  font-size: 0.55rem;              /* ★文字サイズを小さく調整（元は 0.65rem） */
-  font-weight: 600;
-  padding: 1px 5px;                /* ★枠のパディングも少しきゅっとコンパクトに */
-  border-radius: 4px;
-  letter-spacing: 0.03em;
-  backdrop-filter: blur(2px);      /* ★背景をほんのりぼかしてオシャレにする演出 */
+  bottom: 4px;
+  right: 4px;
+  background: rgba(0, 0, 0, 0.3);   /* ★透け感をかなり強めに（0.4） */
+  color: rgba(255, 255, 255, 0.9); /* ★文字色も少し透けさせて馴染ませる */
+  font-size: 0.45rem;              /* ★さらに極小サイズへ（0.45rem） */
+  font-weight: 500;                /* ★文字の太さも少し細く */
+  padding: 0px 3px;                /* ★余白を最小限にして枠自体をキュッと小さく */
+  border-radius: 3px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  backdrop-filter: blur(1px);      /* ★ほんのりスリガラス風 */
 }
+
 
 
 .video-title {
