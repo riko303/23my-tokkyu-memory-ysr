@@ -10,15 +10,16 @@
 <body>
   
         <!-- 🎬 モーダル動画再生用（ポップアップ） -->
-  <div class="video-modal" id="videoModal">
-    <div class="modal-content">
-      <div class="modal-video-wrapper">
-        <!-- ★ iframe ではなく video タグで直接再生します -->
-        <video id="modalVideo" controls playsinline autoplay style="width:100%; height:100%; border-radius:16px;"></video>
-      </div>
+   <!-- 🎬 モーダル動画再生用（ポップアップ） -->
+  <div class="video-modal" id="videoModal" onclick="closeVideo(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
       <button class="modal-close-btn" onclick="closeVideo()">✕</button>
+      <div class="modal-video-wrapper">
+        <iframe id="modalIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
+
 
 
   </div>
@@ -98,47 +99,26 @@
       });
     }
 
-        // 🎬 画面内で動画を再生する機能（ダイレクト再生）
+            // 🎬 画面内で動画を再生する機能
     function playVideo(driveId) {
       const modal = document.getElementById('videoModal');
-      const video = document.getElementById('modalVideo');
+      const iframe = document.getElementById('modalIframe');
       
-      // Googleドライブの動画ダイレクト再生URL
-      video.src = `https://lh3.googleusercontent.com/d/${driveId}`;
+      // Googleドライブの埋め込みプレビュー用URL
+      iframe.src = `https://drive.google.com/file/d/${driveId}/preview`;
       modal.classList.add('active');
-      video.play();
     }
 
     // ✖ 動画を閉じる機能
-    function closeVideo() {
+    function closeVideo(e) {
+      // ボタン指定または背景タップで閉じる
       const modal = document.getElementById('videoModal');
-      const video = document.getElementById('modalVideo');
+      const iframe = document.getElementById('modalIframe');
       
-      video.pause();
-      video.src = ''; // 動画をストップ＆クリア
+      iframe.src = ''; // 映像と音声を完全に停止
       modal.classList.remove('active');
     }
 
-
-    // タブ切り替え機能
-    function filterCategory(category, btnElement) {
-      const tabs = document.querySelectorAll('.tab-btn');
-      tabs.forEach(tab => tab.classList.remove('active'));
-
-      if (btnElement) {
-        btnElement.classList.add('active');
-      }
-
-      const cards = document.querySelectorAll('.video-card');
-      cards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        if (category === 'all' || cardCategory === category) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    }
   </script>
 
 </body>
