@@ -4,43 +4,105 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>プライベート動画ギャラリー</title>
-  <link rel="stylesheet" href="style.css">
-    
-  <!-- index.htmlの <head> の中に追加 -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="動画ギャラリー">
-
-    
+  <!-- ▼ キャッシュ対策用 ?v=4 -->
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
-  <h1>🎀 超特急動画ギャラリー 🎀</h1>
+  <h1>🎀超特急動画ギャラリー 🎀</h1>
 
-  <!-- ★ 2列並びにするための枠組み ★ -->
+  <!-- ===================================================
+       👑 1. イチオシ動画セクション
+  =================================================== -->
+  <div class="pickup-section">
+    <div class="section-title">💖 PICK UP！りこが一番見てほしい動画</div>
+    <div class="pickup-card">
+      <div class="thumb-wrapper">
+        <img src="IMG_5294.jpeg" alt="イチオシ" class="video-thumb">
+        <span class="badge-new">MUST WATCH</span>
+        <span class="badge-time">02:15</span>
+      </div>
+      <div class="video-title">『超えてアバンチュール』from BULLET TRAIN ARENA TOUR 2025-2026「REAL?」 </div>
+      <div class="video-desc">全員の変顔に注目！</div>
+      <a href="https://drive.google.com/file/d/1U9sf85PlSCW3_COvKLORZYlD6r1wrw8T/view" target="_blank" class="play-btn">
+        <span>▶</span> 今すぐ見る
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ===================================================
+       🏷️ 2. ジャンル切り替えタブ
+  =================================================== -->
+  <div class="tab-container">
+    <button class="tab-btn active" onclick="filterCategory('all', this)">✨ すべて</button>
+    <button class="tab-btn" onclick="filterCategory('power', this)">😆元気出る</button>
+    <button class="tab-btn" onclick="filterCategory('cool', this)">😎かっこいい</button>
+ 
+
+
+  <!-- ===================================================
+       🎬 3. 動画一覧（2列グリッド）
+  =================================================== -->
   <div class="video-grid">
 
-    <!-- 1本目の動画 -->
-  <div class="video-card">
-    <img src="photo-output.png" alt="サムネイル" class="video-thumb">
-    <div class="video-title">『Believe×Believe』from BULLET TRAIN ARENA TOUR 2025-2026「REAL?」</div>
-    <div class="video-desc">ほぼリョウガとマサヒロしか映ってない</div>
-    <a href="https://drive.google.com/file/d/1yhIwDsNCvOJ-k5aZzXlZeVM8qofwucTH/view" target="_blank" class="play-btn">
-      <span>▶</span> 動画を再生する
-    </a>
-  </div>
+    <!-- 動画カード1：元気出るカテゴリ (data-category="power") -->
+    <div class="video-card" data-category="travel">
+      <div class="thumb-wrapper">
+        <img src="thumb1.jpg" alt="サムネイル" class="video-thumb">
+        <span class="badge-new">NEW!</span>
+        <span class="badge-time">01:25</span>
+      </div>
+      <div>
+        <div class="video-title">海での思い出</div>
+        <div class="video-desc">2024夏旅行</div>
+      </div>
+      <a href="https://drive.google.com/file/d/★動画ID1★/view" target="_blank" class="play-btn">
+        <span>▶</span> 再生
+      </a>
+    </div>
 
-  <!-- 2本目の動画 -->
-  <div class="video-card">
-    <img src="IMG_5294.jpeg" alt="サムネイル" class="video-thumb">
-    <div class="video-title">超えてアバンチュール</div>
-    <div class="video-desc">全員の変顔に注目</div>
-    <a href="https://drive.google.com/file/d/1U9sf85PlSCW3_COvKLORZYlD6r1wrw8T/view" target="_blank" class="play-btn">
-      <span>▶</span> 動画を再生する
-    </a>
-  </div>
+    <!-- 動画カード2：かっこいいカテゴリ (data-category="cool") -->
+    <div class="video-card" data-category="event">
+      <div class="thumb-wrapper">
+        <img src="thumb2.jpg" alt="サムネイル" class="video-thumb">
+        <span class="badge-time">00:45</span>
+      </div>
+      <div>
+        <div class="video-title">バーベキュー大会</div>
+        <div class="video-desc">お肉タイム</div>
+      </div>
+      <a href="https://drive.google.com/file/d/★動画ID2★/view" target="_blank" class="play-btn">
+        <span>▶</span> 再生
+      </a>
+    </div>
 
-  </div> <!-- /.video-grid ここまで -->
+   
+
+  <!-- ===================================================
+       ⚡ 4. タブ切り替え用プログラム (JavaScript)
+  =================================================== -->
+  <script>
+    function filterCategory(category, btnElement) {
+      // 1. すべてのタブから active クラスを外す
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach(tab => tab.classList.remove('active'));
+
+      // 2. 押されたタブだけに active クラスをつける
+      btnElement.classList.add('active');
+
+      // 3. 動画カードの表示・非表示を切り替える
+      const cards = document.querySelectorAll('.video-card');
+      cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        if (category === 'all' || cardCategory === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
