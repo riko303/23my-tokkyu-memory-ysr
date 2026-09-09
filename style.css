@@ -200,7 +200,12 @@ h1 {
   font-size: 0.8rem;
   border-radius: 20px;
   box-shadow: 0 3px 8px rgba(255, 117, 140, 0.3);
+  border: none;              /* ★追加：灰色の枠線を消す */
+  outline: none;             /* ★追加：タップ時の黒枠を消す */
+  cursor: pointer;           /* ★追加：ボタンとして押せるカーソルにする */
+  -webkit-appearance: none;  /* ★追加：iPhoneでのボタンデフォルト見た目をリセット */
 }
+
 
 .play-btn span {
   margin-right: 4px;
