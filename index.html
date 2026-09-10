@@ -8,19 +8,6 @@
   <link rel="stylesheet" href="style.css?v=14">
 </head>
 <body>
-  
-        <!-- 🎬 モーダル動画再生用（ポップアップ） -->
-   <!-- 🎬 モーダル動画再生用（ポップアップ） -->
-  <div class="video-modal" id="videoModal" onclick="closeVideo(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="modal-close-btn" onclick="closeVideo()">✕</button>
-      <div class="modal-video-wrapper">
-        <iframe id="modalIframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-
 
   </div>
 
@@ -99,24 +86,29 @@
       });
     }
 
-            // 🎬 画面内で動画を再生する機能
+// 🎬 Googleドライブの別タブでスムーズに全画面再生する機能
     function playVideo(driveId) {
-      const modal = document.getElementById('videoModal');
-      const iframe = document.getElementById('modalIframe');
-      
-      // Googleドライブの埋め込みプレビュー用URL
-      iframe.src = `https://drive.google.com/file/d/${driveId}/preview`;
-      modal.classList.add('active');
+      window.open(`https://drive.google.com/file/d/${driveId}/preview`, '_blank');
     }
 
-    // ✖ 動画を閉じる機能
-    function closeVideo(e) {
-      // ボタン指定または背景タップで閉じる
-      const modal = document.getElementById('videoModal');
-      const iframe = document.getElementById('modalIframe');
-      
-      iframe.src = ''; // 映像と音声を完全に停止
-      modal.classList.remove('active');
+    // タブ切り替え機能
+    function filterCategory(category, btnElement) {
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach(tab => tab.classList.remove('active'));
+
+      if (btnElement) {
+        btnElement.classList.add('active');
+      }
+
+      const cards = document.querySelectorAll('.video-card');
+      cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        if (category === 'all' || cardCategory === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
     }
 
   </script>
