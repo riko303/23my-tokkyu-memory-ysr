@@ -36,7 +36,7 @@
   </div>
 
 
-    <!-- ===================================================
+  <!-- ===================================================
        🏷️ 2. ジャンル切り替えタブ
   =================================================== -->
   <div class="tab-container">
@@ -44,20 +44,19 @@
     <button class="tab-btn" onclick="filterCategory('power', this)">😆 元気出る</button>
     <button class="tab-btn" onclick="filterCategory('cool', this)">😎 かっこいい</button>
     <button class="tab-btn" onclick="filterCategory('good', this)">😘 好きな曲</button>
-  </div> <!-- ★ 閉じタグを追加しました -->
+  </div>
 
 
   <!-- ===================================================
        🎬 3. 動画一覧（2列グリッド）
   =================================================== -->
-  <!-- ★ id="videoGrid" を追加しました -->
   <div class="video-grid" id="videoGrid"></div>
 
 
   <!-- ===================================================
        ⚡ 4. データ読み込み＆タブ切り替えプログラム
   =================================================== -->
-    <script src="videos.js?v=2"></script>
+  <script src="videos.js?v=2"></script>
   <script>
     // 画面が読み込まれたら動画カードを動的に作成
     const grid = document.getElementById('videoGrid');
@@ -67,6 +66,7 @@
         const newBadge = video.isNew ? '<span class="badge-new">NEW!</span>' : '';
         const descText = video.desc ? `<div class="video-desc">${video.desc}</div>` : '';
         
+        // <a> タグ形式の動画カードを作成（長押しで新規タブ対応）
         const cardHtml = `
           <div class="video-card" data-category="${video.category}">
             <div class="thumb-wrapper">
@@ -78,20 +78,6 @@
               <div class="video-title">${video.title}</div>
               ${descText}
             </div>
-            
-            <!-- ★ onclickで画面内再生（モーダル）を開く処理に変更 -->
-                    const cardHtml = `
-          <div class="video-card" data-category="${video.category}">
-            <div class="thumb-wrapper">
-              <img src="${video.thumb}" alt="サムネイル" class="video-thumb">
-              ${newBadge}
-              <span class="badge-time">${video.time}</span>
-            </div>
-            <div>
-              <div class="video-title">${video.title}</div>
-              ${descText}
-            </div>
-            <!-- ★ button から a タグに変更（長押しで新規タブが開けるように） -->
             <a href="https://drive.google.com/file/d/${video.driveId}/preview" target="_blank" class="play-btn">
               <span>▶</span> 再生
             </a>
@@ -102,15 +88,12 @@
       });
     }
 
-// 🎬 Googleドライブの別タブでスムーズに全画面再生する機能
-    // 🎬 GoogleドライブのWeb版プレイヤーを新しいタブで開く
-function playVideo(driveId) {
-  // Webブラウザで開くURL設定
-  window.open(`https://drive.google.com/file/d/${driveId}/preview`, '_blank');
-}
+    // 🎬 GoogleドライブのWeb版プレイヤーを新しいタブで開く機能
+    function playVideo(driveId) {
+      window.open(`https://drive.google.com/file/d/${driveId}/preview`, '_blank');
+    }
 
-
-    // タブ切り替え機能
+    // 🏷️ タブ切り替え機能
     function filterCategory(category, btnElement) {
       const tabs = document.querySelectorAll('.tab-btn');
       tabs.forEach(tab => tab.classList.remove('active'));
@@ -129,7 +112,6 @@ function playVideo(driveId) {
         }
       });
     }
-
   </script>
 
 </body>
