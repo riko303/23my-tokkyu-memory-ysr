@@ -196,15 +196,17 @@ h1 {
 }
 
 /* --- 再生ボタン（サイズ調整済み） --- */
+/* --- 再生ボタン（横長＆きれいなデザイン） --- */
 .play-btn {
-  display: inline-flex; /* flexからinline-flexにして文字幅に合わせる */
+  display: flex; /* 中央寄せ用 */
   align-items: center;
   justify-content: center;
+  gap: 6px; /* アイコンと文字の間隔 */
   
-  /* ↓ 巨大化の原因だった width: 100% を外してサイズ指定 */
-  width: auto;           /* または 200px など固定値にしてもOK */
-  padding: 10px 24px;   /* ボタンの大きさを余白で調整 */
-  margin: 15px auto 0;  /* 中央に配置する場合 */
+  width: 100%; /* 横幅いっぱいに広げる */
+  box-sizing: border-box;
+  padding: 12px 16px; /* 縦横のゆとり */
+  margin-top: 10px;
   
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
   color: #ffffff !important;
@@ -212,14 +214,21 @@ h1 {
   text-decoration: none;
   font-weight: bold;
   font-size: 0.9rem;
-  border-radius: 20px;
-  box-shadow: 0 3px 8px rgba(255, 117, 140, 0.3);
+  border-radius: 25px; /* 丸みを少し強めて可愛く */
+  box-shadow: 0 4px 12px rgba(255, 117, 140, 0.35);
   border: none;
   outline: none;
   cursor: pointer;
-  -webkit-appearance: none;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+/* 押した時に少し沈む演出（おまけ） */
+.play-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 6px rgba(255, 117, 140, 0.3);
 }
 
 .play-btn span {
-  margin-right: 4px;
+  margin-right: 0; /* gapで制御するため指定解除 */
+  font-size: 0.8rem;
 }
