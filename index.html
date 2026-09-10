@@ -77,11 +77,24 @@
               ${descText}
             </div>
             <!-- ★ onclickで画面内再生（モーダル）を開く処理に変更 -->
-            <button onclick="playVideo('${video.driveId}')" class="play-btn">
+                    const cardHtml = `
+          <div class="video-card" data-category="${video.category}">
+            <div class="thumb-wrapper">
+              <img src="${video.thumb}" alt="サムネイル" class="video-thumb">
+              ${newBadge}
+              <span class="badge-time">${video.time}</span>
+            </div>
+            <div>
+              <div class="video-title">${video.title}</div>
+              ${descText}
+            </div>
+            <!-- ★ button から a タグに変更（長押しで新規タブが開けるように） -->
+            <a href="https://drive.google.com/file/d/${video.driveId}/preview" target="_blank" class="play-btn">
               <span>▶</span> 再生
-            </button>
+            </a>
           </div>
         `;
+
         grid.insertAdjacentHTML('beforeend', cardHtml);
       });
     }
