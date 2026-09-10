@@ -282,3 +282,71 @@ h1 {
   justify-content: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
+
+/* ===================================================
+   🎬 画面内で動画再生（全画面風モーダル完全版）
+=================================================== */
+.video-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000000; /* 背景を真っ黒にして画面全体をプレイヤー風に */
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.video-modal.active {
+  display: flex !important;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  height: 100%; /* スマホ画面いっぱいに広げる */
+  max-width: 800px; /* PCで見ても大きくなりすぎないように制限 */
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%; /* 全体を使って再生エリアを確保 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ✖ 閉じるボタン（押しやすいように左上に配置＆目立たせる） */
+.modal-close-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px; /* 右上のGoogleドライブUIと被らないように「左上」に配置 */
+  background: rgba(255, 255, 255, 0.9);
+  color: #ff4757;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10002; /* 操作バーより手前に表示 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
