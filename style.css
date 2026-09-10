@@ -62,13 +62,12 @@ h1 {
 .tab-container {
   display: flex;
   gap: 8px;
-  overflow-x: auto; /* 横スクロール対応 */
+  overflow-x: auto;
   padding-bottom: 8px;
   margin-bottom: 16px;
   -webkit-overflow-scrolling: touch;
 }
 
-/* スクロールバーを隠す */
 .tab-container::-webkit-scrollbar {
   display: none;
 }
@@ -87,7 +86,6 @@ h1 {
   transition: all 0.2s ease;
 }
 
-/* 選択されているタブのスタイル */
 .tab-btn.active {
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
   color: #ffffff;
@@ -118,12 +116,10 @@ h1 {
   transition: transform 0.2s ease;
 }
 
-/* 非表示用クラス（タブ切り替えで使用） */
 .video-card.hidden {
   display: none !important;
 }
 
-/* サムネイル共通枠 */
 .thumb-wrapper {
   position: relative;
   width: 100%;
@@ -139,7 +135,6 @@ h1 {
   display: block;
 }
 
-/* ラベルバッジ */
 .badge-new {
   position: absolute;
   top: 6px;
@@ -152,23 +147,20 @@ h1 {
   border-radius: 10px;
 }
 
-/* 右下の「再生時間」バッジ */
 .badge-time {
   position: absolute;
   bottom: 4px;
   right: 4px;
-  background: rgba(0, 0, 0, 0.5);   /* ★透け感をかなり強めに（0.4） */
-  color: rgba(255, 255, 255, 0.9); /* ★文字色も少し透けさせて馴染ませる */
-  font-size: 0.45rem;              /* ★さらに極小サイズへ（0.45rem） */
-  font-weight: 500;                /* ★文字の太さも少し細く */
-  padding: 0px 3px;                /* ★余白を最小限にして枠自体をキュッと小さく */
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.45rem;
+  font-weight: 500;
+  padding: 0px 3px;
   border-radius: 3px;
   line-height: 1.2;
   letter-spacing: 0;
-  backdrop-filter: blur(1px);      /* ★ほんのりスリガラス風 */
+  backdrop-filter: blur(1px);
 }
-
-
 
 .video-title {
   font-size: 0.85rem;
@@ -200,153 +192,12 @@ h1 {
   font-size: 0.8rem;
   border-radius: 20px;
   box-shadow: 0 3px 8px rgba(255, 117, 140, 0.3);
-  border: none;              /* ★追加：灰色の枠線を消す */
-  outline: none;             /* ★追加：タップ時の黒枠を消す */
-  cursor: pointer;           /* ★追加：ボタンとして押せるカーソルにする */
-  -webkit-appearance: none;  /* ★追加：iPhoneでのボタンデフォルト見た目をリセット */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
 }
-
 
 .play-btn span {
   margin-right: 4px;
-}
-
-/* ===================================================
-   🎬 画面内で動画再生（Googleドライブ操作UI崩れ防止版）
-=================================================== */
-.video-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 10000;
-  align-items: center;
-  justify-content: center;
-  padding: 12px;
-  box-sizing: border-box;
-  backdrop-filter: blur(8px);
-}
-
-.video-modal.active {
-  display: flex !important;
-}
-
-.modal-content {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  background: #000000;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
-  overflow: hidden;
-}
-
-/* ★ 操作バーが出ても映像がズレないよう、高さを柔軟に調整 */
-.modal-video-wrapper {
-  position: relative;
-  width: 100%;
-  height: 65vh; /* スマホ画面の高さの65%を確保してUIが出てもみ出さないようにする */
-  max-height: 400px;
-  background: #000000;
-}
-
-.modal-video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* ✖ 閉じるボタン（UIと被らないように右上に固定） */
-.modal-close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(255, 255, 255, 0.9);
-  color: #ff4757;
-  border: none;
-  font-size: 1.1rem;
-  font-weight: bold;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10002; /* UIより前面に表示 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
-
-/* ===================================================
-   🎬 画面内で動画再生（全画面風モーダル完全版）
-=================================================== */
-.video-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #000000; /* 背景を真っ黒にして画面全体をプレイヤー風に */
-  z-index: 10000;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.video-modal.active {
-  display: flex !important;
-}
-
-.modal-content {
-  position: relative;
-  width: 100%;
-  height: 100%; /* スマホ画面いっぱいに広げる */
-  max-width: 800px; /* PCで見ても大きくなりすぎないように制限 */
-  background: #000000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-video-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%; /* 全体を使って再生エリアを確保 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-video-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* ✖ 閉じるボタン（押しやすいように左上に配置＆目立たせる） */
-.modal-close-btn {
-  position: absolute;
-  top: 16px;
-  left: 16px; /* 右上のGoogleドライブUIと被らないように「左上」に配置 */
-  background: rgba(255, 255, 255, 0.9);
-  color: #ff4757;
-  border: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10002; /* 操作バーより手前に表示 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
