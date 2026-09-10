@@ -7,7 +7,7 @@ const videoData = [
     time: "04:36",
     isNew: false, // NEWマークをつける場合は true、つけない場合は false
     category: "", // ジャンル
-    driveId: "pj0o1PwxxfI"
+    youtubeId: "pj0o1PwxxfI"
   },
   {
     
@@ -27,7 +27,7 @@ const videoData = [
     time: "04:28",
     isNew: false,
     category: "power",
-    driveId: "wzZ0IwmP3zI"
+    youtubeId: "wzZ0IwmP3zI"
   },
   
    {
@@ -37,7 +37,7 @@ const videoData = [
     time: "04:20",
     isNew: false,
     category: "good",
-    driveId: "X2zu8mT04iw"
+    youtubeId: "X2zu8mT04iw"
   },
 
 {
@@ -47,7 +47,7 @@ const videoData = [
     time: "03:16",
     isNew: false,
     category: "good",
-    driveId: "MH_qpRQVH_s"
+    youtubeId: "MH_qpRQVH_s"
   },
 
 ];
