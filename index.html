@@ -66,20 +66,20 @@
   <div class="video-grid" id="videoGrid"></div>
 
 
-  <!-- ⚡ 4. データ読み込み＆タブ切り替えプログラム -->
-  <script src="videos.js?v=3"></script>
+   <!-- ⚡ 4. データ読み込み＆タブ切り替えプログラム -->
+  <script src="videos.js?v=4"></script>
   <script>
     const grid = document.getElementById('videoGrid');
     
     if (typeof videoData !== 'undefined' && grid) {
-      videoData.forEach((video, index) => {
+      videoData.forEach((video) => {
         const newBadge = video.isNew ? '<span class="badge-new">NEW!</span>' : '';
         const descText = video.desc ? `<div class="video-desc">${video.desc}</div>` : '';
-        const uniqueId = 'player-grid-' + index;
         
+        // 直リンク方式：クリックすると100%確実にYouTubeで開いて再生されます
         const cardHtml = `
           <div class="video-card" data-category="${video.category}">
-            <div class="thumb-wrapper" id="${uniqueId}">
+            <div class="thumb-wrapper">
               <img src="${video.thumb}" alt="サムネイル" class="video-thumb">
               ${newBadge}
               <span class="badge-time">${video.time}</span>
@@ -88,34 +88,14 @@
               <div class="video-title">${video.title}</div>
               ${descText}
             </div>
-            <button type="button" class="play-btn" data-id="${video.youtubeId}" data-target="${uniqueId}" onclick="embedYouTube(this)">
+            <a href="https://www.youtube.com/watch?v=${video.youtubeId}" target="_blank" rel="noopener noreferrer" class="play-btn">
               <span>▶</span> 再生
-            </button>
+            </a>
           </div>
         `;
 
         grid.insertAdjacentHTML('beforeend', cardHtml);
       });
-    }
-
-    // 🎬 再生ボタンを押した時に動画を埋め込む関数
-    function embedYouTube(btn) {
-      const youtubeId = btn.getAttribute('data-id');
-      const targetId = btn.getAttribute('data-target');
-      const container = document.getElementById(targetId);
-
-      if (container && youtubeId) {
-        // 標準の www.youtube.com に変更し、さまざまなブラウザ制限を回避します
-        container.innerHTML = `
-          <iframe 
-            src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&playsinline=1&rel=0" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen>
-          </iframe>
-        `;
-      }
     }
 
     // 🏷️ タブ切り替え機能
@@ -138,6 +118,7 @@
       });
     }
   </script>
+
 
 
 
