@@ -67,6 +67,7 @@
         const descText = video.desc ? `<div class="video-desc">${video.desc}</div>` : '';
         
         // <a> タグ形式の動画カードを作成（長押しで新規タブ対応）
+               // <a> タグ形式の動画カードを作成（/view モードに変更）
         const cardHtml = `
           <div class="video-card" data-category="${video.category}">
             <div class="thumb-wrapper">
@@ -78,11 +79,12 @@
               <div class="video-title">${video.title}</div>
               ${descText}
             </div>
-            <a href="https://drive.google.com/file/d/${video.driveId}/preview" target="_blank" class="play-btn">
+            <a href="https://drive.google.com/file/d/${video.driveId}/view" target="_blank" class="play-btn">
               <span>▶</span> 再生
             </a>
           </div>
         `;
+
 
         grid.insertAdjacentHTML('beforeend', cardHtml);
       });
