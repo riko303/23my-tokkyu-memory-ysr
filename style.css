@@ -178,18 +178,40 @@ h1 {
   line-height: 1.2;
 }
 
+/* --- 動画を囲むコンテナ（余白・黒帯対策） --- */
+.video-container {
+  width: 100%;
+  max-width: 800px; /* 必要に応じてお好みのサイズに変更してください */
+  margin: 0 auto;   /* 中央揃え */
+}
+
+/* 動画本体（16:9を保持して黒帯をなくす） */
+.video-container iframe,
+.video-container video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9; /* 横幅に合わせて高さを16:9に自動計算 */
+  border: none;
+  display: block;
+}
+
+/* --- 再生ボタン（サイズ調整済み） --- */
 .play-btn {
-  display: flex;
+  display: inline-flex; /* flexからinline-flexにして文字幅に合わせる */
   align-items: center;
   justify-content: center;
-  width: 100%;
-  padding: 8px 0;
+  
+  /* ↓ 巨大化の原因だった width: 100% を外してサイズ指定 */
+  width: auto;           /* または 200px など固定値にしてもOK */
+  padding: 10px 24px;   /* ボタンの大きさを余白で調整 */
+  margin: 15px auto 0;  /* 中央に配置する場合 */
+  
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
   color: #ffffff !important;
   text-align: center;
   text-decoration: none;
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   border-radius: 20px;
   box-shadow: 0 3px 8px rgba(255, 117, 140, 0.3);
   border: none;
