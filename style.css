@@ -120,12 +120,15 @@ h1 {
   display: none !important;
 }
 
+/* --- サムネイル＆動画プレイヤーを囲む枠（比率を固定して崩れを防ぐ） --- */
 .thumb-wrapper {
   position: relative;
   width: 100%;
+  aspect-ratio: 16 / 9; /* 常に16:9の動画比率をキープ */
   margin-bottom: 8px;
   overflow: hidden;
   border-radius: 12px;
+  background-color: #000000; /* 読み込み中も黒背景で綺麗に見せる */
 }
 
 .video-thumb {
@@ -134,6 +137,18 @@ h1 {
   object-fit: cover;
   display: block;
 }
+
+/* ★ここが一番重要です！再生ボタンを押して差し替わった iframe のサイズをピタッと合わせる */
+.thumb-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: none;
+  border-radius: 12px;
+}
+
 
 .badge-new {
   position: absolute;
