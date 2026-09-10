@@ -66,21 +66,20 @@
   <div class="video-grid" id="videoGrid"></div>
 
 
-  <!-- ⚡ 4. データ読み込み＆タブ切り替えプログラム -->
+    <!-- ⚡ 4. データ読み込み＆タブ切り替えプログラム -->
   <script src="videos.js?v=2"></script>
   <script>
-    // 画面が読み込まれたら動画カードを動的に作成
     const grid = document.getElementById('videoGrid');
     
     if (typeof videoData !== 'undefined' && grid) {
-      videoData.forEach(video => {
+      videoData.forEach((video, index) => {
         const newBadge = video.isNew ? '<span class="badge-new">NEW!</span>' : '';
         const descText = video.desc ? `<div class="video-desc">${video.desc}</div>` : '';
+        const uniqueId = 'player-grid-' + index;
         
-        // 動画カードを作成
         const cardHtml = `
           <div class="video-card" data-category="${video.category}">
-            <div class="thumb-wrapper" id="player-${video.youtubeId}">
+            <div class="thumb-wrapper" id="${uniqueId}">
               <img src="${video.thumb}" alt="サムネイル" class="video-thumb">
               ${newBadge}
               <span class="badge-time">${video.time}</span>
@@ -89,7 +88,7 @@
               <div class="video-title">${video.title}</div>
               ${descText}
             </div>
-            <button type="button" class="play-btn" onclick="playGridVideo('${video.youtubeId}')">
+            <button type="button" class="play-btn" data-id="${video.youtubeId}" data-target="${uniqueId}" onclick="embedYouTube(this)">
               <span>▶</span> 再生
             </button>
           </div>
@@ -99,29 +98,13 @@
       });
     }
 
-    // 🎬 イチオシ動画の再生機能
-    function playPickupVideo(youtubeId) {
-      const container = document.getElementById('pickup-player');
-      if (container) {
-        container.innerHTML = `
-          <iframe 
-            width="100%" 
-            height="100%" 
-            src="https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: none;">
-          </iframe>
-        `;
-      }
-    }
+    // 🎬 再生ボタンを押した時に動画を埋め込む関数
+    function embedYouTube(btn) {
+      const youtubeId = btn.getAttribute('data-id');
+      const targetId = btn.getAttribute('data-target');
+      const container = document.getElementById(targetId);
 
-    // 🎬 一覧動画（2列グリッド）の再生機能
-    function playGridVideo(youtubeId) {
-      const container = document.getElementById(`player-${youtubeId}`);
-      if (container) {
+      if (container && youtubeId) {
         container.innerHTML = `
           <iframe 
             width="100%" 
@@ -157,6 +140,7 @@
       });
     }
   </script>
+
 
 
 </body>
