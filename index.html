@@ -87,9 +87,12 @@
     }
 
 // 🎬 Googleドライブの別タブでスムーズに全画面再生する機能
-    function playVideo(driveId) {
-      window.open(`https://drive.google.com/file/d/${driveId}/preview`, '_blank');
-    }
+    // 🎬 GoogleドライブのWeb版プレイヤーを新しいタブで開く
+function playVideo(driveId) {
+  // Webブラウザで開くURL設定
+  window.open(`https://drive.google.com/file/d/${driveId}/preview`, '_blank');
+}
+
 
     // タブ切り替え機能
     function filterCategory(category, btnElement) {
