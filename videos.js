@@ -17,7 +17,7 @@ const videoData = [
     time: "03:48",
     isNew: false,
     category: "power",
-    youtubeId: "qOWCpi2lflv" // ← ここをYouTubeのIDに変更！
+    youtubeId: "TPhx_q0cjIo" // ← ここをYouTubeのIDに変更！
   },
   
     {
