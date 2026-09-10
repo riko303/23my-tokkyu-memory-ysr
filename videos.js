@@ -27,7 +27,7 @@ const videoData = [
     time: "04:28",
     isNew: false,
     category: "power",
-    driveId: "1upNAI6u-Z3ys28S3te3vMbwzf_ILQl3c"
+    driveId: "K40bmxDlMXV"
   },
   
    {
