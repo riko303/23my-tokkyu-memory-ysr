@@ -66,8 +66,8 @@
   <div class="video-grid" id="videoGrid"></div>
 
 
-    <!-- ⚡ 4. データ読み込み＆タブ切り替えプログラム -->
-  <script src="videos.js?v=2"></script>
+  <!-- ⚡ 4. データ読み込み＆タブ切り替えプログラム -->
+  <script src="videos.js?v=3"></script>
   <script>
     const grid = document.getElementById('videoGrid');
     
@@ -105,16 +105,14 @@
       const container = document.getElementById(targetId);
 
       if (container && youtubeId) {
+        // 標準の www.youtube.com に変更し、さまざまなブラウザ制限を回避します
         container.innerHTML = `
           <iframe 
-            width="100%" 
-            height="100%" 
-            src="https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0" 
+            src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&playsinline=1&rel=0" 
             title="YouTube video player" 
             frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: none;">
+            allowfullscreen>
           </iframe>
         `;
       }
