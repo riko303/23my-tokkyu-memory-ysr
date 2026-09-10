@@ -10,13 +10,14 @@ const videoData = [
     driveId: "1yhIwDsNCvOJ-k5aZzXlZeVM8qofwucTH"
   },
   {
+    
     title: "『超えてアバンチュール』from BULLET TRAIN ARENA TOUR 2025-2026「REAL?」",
     desc: "全員の変顔に注目！",
-    thumb: "IMG_5294.jpeg",
+    thumb: "IMG_5294.jpeg", //
     time: "03:48",
     isNew: false,
     category: "power",
-    driveId: "1U9sf85PlSCW3_COvKLORZYlD6r1wrw8T"
+    youtubeId: "K40bmxDlMXV" // ← ここをYouTubeのIDに変更！
   },
   
     {
