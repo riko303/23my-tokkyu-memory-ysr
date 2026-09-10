@@ -182,7 +182,9 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  <iframe 
+  width: 100%; max-width: 800px; aspect-ratio: 16 / 9; height: auto; border: none;">
+</iframe>
   padding: 8px 0;
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
   color: #ffffff !important;
