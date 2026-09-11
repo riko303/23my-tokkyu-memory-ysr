@@ -3,7 +3,7 @@
 =================================================== */
 body {
   /* ★背景画像の設定（画像名をご自身のものに書き換えてください） */
-  background-image: url('photo_output.png') !important;
+  background-image: url('photo-output.png') !important;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
