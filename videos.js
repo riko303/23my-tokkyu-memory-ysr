@@ -49,5 +49,15 @@ const videoData = [
     category: "good",
     youtubeId: "MH_qpRQVH_s"
   },
+  
+    {
+    title: "『原因は自分にある』from EBiDAN THE LIVE 2025 HOTEL NINE STAR 【Day1】Emerald GATE ",
+    desc: "シャッフルでしか見られない歌ってるレアリョウガ！メロリョウガに注目！",
+    thumb: "IMG_5339.jpeg", //
+    time: "03:10",
+    isNew: false,
+    category: "shuffle",
+    youtubeId: "mij16lccfqw" // ← ここをYouTubeのIDに変更！
+  },
 
 ];
