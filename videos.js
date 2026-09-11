@@ -52,12 +52,23 @@ const videoData = [
   
     {
     title: "『原因は自分にある。』from EBiDAN THE LIVE 2025 HOTEL NINE STAR 【Day1】Emerald GATE ",
-    desc: "シャッフルでしか見られない歌ってるレアリョウガ！メロリョウガに注目！",
+    desc: "シャッフルでしか見られない歌ってるレアリョウガ！メロリョウガ！あと普通に曲がかっこいい",
     thumb: "IMG_5343.jpeg", //
     time: "03:10",
     isNew: false,
     category: "shuffle",
     youtubeId: "mij16lccfqw" // ← ここをYouTubeのIDに変更！
   },
+  
+  {
+    title: "『La Vida Loca』from EBiDAN THE LIVE 2025 HOTEL NINE STAR 【Day1】Emerald GATE ",
+    desc: "いつもと違うシューヤかっこいい！癖になる曲",
+    thumb: "IMG_5349.jpeg", //
+    time: "03:37",
+    isNew: false,
+    category: "shuffle",
+    youtubeId: "iRYhVIZ-JJc" // ← ここをYouTubeのIDに変更！
+  },
+
 
 ];
