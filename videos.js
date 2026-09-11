@@ -51,7 +51,7 @@ const videoData = [
   },
   
     {
-    title: "『原因は自分にある』from EBiDAN THE LIVE 2025 HOTEL NINE STAR 【Day1】Emerald GATE ",
+    title: "『原因は自分にある。』from EBiDAN THE LIVE 2025 HOTEL NINE STAR 【Day1】Emerald GATE ",
     desc: "シャッフルでしか見られない歌ってるレアリョウガ！メロリョウガに注目！",
     thumb: "IMG_5343.jpeg", //
     time: "03:10",
