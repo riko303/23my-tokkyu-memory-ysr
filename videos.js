@@ -3,7 +3,7 @@ const videoData = [
   {
     title: "『Believe×Believe』from BULLET TRAIN ARENA TOUR 2025-2026「REAL?」",
     desc: "ほぼリョウガとマサヒロしか映ってない",
-    thumb: "photo-output.png",
+    thumb: "IMG_5351.jpeg",
     time: "04:36",
     isNew: false, // NEWマークをつける場合は true、つけない場合は false
     category: "", // ジャンル
