@@ -1,11 +1,19 @@
 /* style.css (イチオシ枠＆カテゴリタブ付きデザイン) */
 body {
-  background-color: #fff5f7 !important;
-  color: #4a4a4a !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* 背景画像の設定 */
+  background-image: url('bg.jpg'); /* ←ここに画像ファイル名を入れる */
+  background-size: cover;          /* 画面いっぱいに綺麗に広げる */
+  background-position: center;     /* 画像の中央を基準にする */
+  background-repeat: no-repeat;    /* 画像を繰り返し表示させない */
+  background-attachment: fixed;    /* スクロールしても背景画像を固定する */
+
+  /* 文字の読みやすさを保つ基本設定 */
+  color: #333333;
+  font-family: sans-serif;
   margin: 0;
-  padding: 16px 12px;
+  padding: 16px;
 }
+
 
 h1 {
   font-size: 1.2rem;
