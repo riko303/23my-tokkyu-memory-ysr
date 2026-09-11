@@ -1,4 +1,6 @@
-/* --- 背景画像の固定（iPhone/Safari対応版） --- */
+/* ===================================================
+   🌸 星空背景の設定（iPhone伸び対策済み）
+=================================================== */
 body::before {
   content: "";
   position: fixed;
@@ -6,146 +8,90 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('IMG_5057.jpeg'); /* ←画像ファイル名 */
+  /* ★ここに保存した画像ファイル名を入れてください */
+  background-image: url('IMG_5057.jpg'); 
   background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1; /* 動画カードの裏側に配置 */
+  background-repeat: repeat; /* お星さまの柄をタイル状に綺麗に敷き詰めます */
+  background-size: 250px;    /* 柄の大きさをちょうど良く調整 */
+  z-index: -1;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #333333;
+  color: #ffffff; /* 文字を読みやすい白に設定 */
   margin: 0;
   padding: 16px;
   box-sizing: border-box;
-  background-color: #fff0f5;
+  background-color: #2b2b2c;
 }
 
-
-
-h1 {
-  font-size: 1.2rem;
-  text-align: center;
-  margin: 10px 0 16px 0;
-  color: #ff6b81;
-  letter-spacing: 0.05em;
-  font-weight: bold;
-}
-
-/* -----------------------------------
-   👑 イチオシ動画（PICK UP）セクション
------------------------------------ */
+/* ===================================================
+   💖 イチオシ動画（PICK UP）セクション
+=================================================== */
 .pickup-section {
-  margin-bottom: 24px;
+  max-width: 800px;
+  margin: 0 auto 24px auto;
+  /* すりガラスっぽいオシャレな半透明黒 */
+  background: rgba(20, 20, 20, 0.75);
+  backdrop-filter: blur(8px); /* 背景をうっすらぼかす */
+  border: 1px solid rgba(255, 182, 193, 0.3); /* ほんのりピンクの繊細な枠線 */
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
 .section-title {
-  font-size: 0.95rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  color: #ff4757;
-  margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 4px;
+  color: #f7a8c4; /* 上品な明るいピンク */
+  margin-bottom: 12px;
 }
 
-.pickup-card {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 12px;
-  box-shadow: 0 6px 18px rgba(255, 107, 129, 0.2);
-  border: 2px solid #ffccd5;
+.pickup-card .play-btn {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 12px;
 }
 
-.pickup-card .thumb-wrapper {
-  aspect-ratio: 16 / 9;
-}
-
-.pickup-card .video-title {
-  font-size: 1rem;
-  margin: 8px 0 4px 0;
-}
-
-.pickup-card .video-desc {
-  font-size: 0.8rem;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-/* -----------------------------------
-   🏷️ ジャンル切り替えタブ
------------------------------------ */
-.tab-container {
-  display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 8px;
-  margin-bottom: 16px;
-  -webkit-overflow-scrolling: touch;
-}
-
-.tab-container::-webkit-scrollbar {
-  display: none;
-}
-
-.tab-btn {
-  background: #ffffff;
-  border: 1.5px solid #ffe3e8;
-  color: #666666;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  white-space: nowrap;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
-  transition: all 0.2s ease;
-}
-
-.tab-btn.active {
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  color: #ffffff;
-  border-color: transparent;
-  box-shadow: 0 3px 10px rgba(255, 117, 140, 0.35);
-}
-
-/* -----------------------------------
-   🎬 2列動画リスト（通常枠）
------------------------------------ */
-.video-grid {
+/* ===================================================
+   📱 動画カードのレイアウト
+=================================================== */
+#videoGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  max-width: 600px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
 .video-card {
-  background: #ffffff;
+  /* シックな黒の透け感カード */
+  background: rgba(255, 255, 255, 0.08); 
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 18px;
-  padding: 10px;
-  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.2);
-  border: 2px solid #ffe3e8;
+  padding: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.2s ease;
 }
 
 .video-card.hidden {
   display: none !important;
 }
 
-/* --- サムネイル＆動画プレイヤーを囲む枠（比率を固定して崩れを防ぐ） --- */
+/* ===================================================
+   🖼️ サムネイル＆バッジ
+=================================================== */
 .thumb-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9; /* 常に16:9の動画比率をキープ */
-  margin-bottom: 8px;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 10px;
   overflow: hidden;
   border-radius: 12px;
-  background-color: #000000; /* 読み込み中も黒背景で綺麗に見せる */
+  background-color: #000000;
 }
 
 .video-thumb {
@@ -155,125 +101,75 @@ h1 {
   display: block;
 }
 
-/* ★ここが一番重要です！再生ボタンを押して差し替わった iframe のサイズをピタッと合わせる */
-.thumb-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  border: none;
-  border-radius: 12px;
-}
-
-
+/* NEWバッジ：ゴールドキラキラ風 */
 .badge-new {
   position: absolute;
-  top: 6px;
-  left: 6px;
-  background: linear-gradient(135deg, #ff4757, #ff6b81);
-  color: #ffffff;
-  font-size: 0.65rem;
+  top: 8px;
+  left: 8px;
+  background: linear-gradient(135deg, #ffe082, #f5b041);
+  color: #333;
+  font-size: 0.75rem;
   font-weight: bold;
-  padding: 2px 8px;
-  border-radius: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
 }
 
 .badge-time {
   position: absolute;
-  bottom: 4px;
-  right: 4px;
-  background: rgba(0, 0, 0, 0.5);
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.45rem;
-  font-weight: 500;
-  padding: 0px 3px;
-  border-radius: 3px;
-  line-height: 1.2;
-  letter-spacing: 0;
-  backdrop-filter: blur(1px);
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 3px 7px;
+  border-radius: 6px;
 }
 
 .video-title {
-  font-size: 0.85rem;
   font-weight: bold;
-  color: #333333;
+  font-size: 1rem;
+  color: #ffffff;
   margin-bottom: 4px;
-  line-height: 1.35;
-  word-break: break-word;
 }
 
 .video-desc {
-  font-size: 0.7rem;
-  color: #888888;
+  font-size: 0.85rem;
+  color: #cccccc; /* ほんのり明るいグレー */
   margin-bottom: 8px;
-  line-height: 1.2;
 }
 
-/* --- 動画を囲むコンテナ（余白・黒帯対策） --- */
-.video-container {
-  width: 100%;
-  max-width: 800px; /* 必要に応じてお好みのサイズに変更してください */
-  margin: 0 auto;   /* 中央揃え */
-}
-
-/* 動画本体（16:9を保持して黒帯をなくす） */
-.video-container iframe,
-.video-container video {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9; /* 横幅に合わせて高さを16:9に自動計算 */
-  border: none;
-  display: block;
-}
-
-/* --- 再生ボタン（サイズ調整済み） --- */
-/* --- 再生ボタン（横長＆きれいなデザイン） --- */
+/* ===================================================
+   ▶ 再生ボタン（可愛いピンク）
+=================================================== */
 .play-btn {
-  display: flex; /* 中央寄せ用 */
-  align-items: center;
-  justify-content: center;
-  gap: 6px; /* アイコンと文字の間隔 */
-  
-  width: 100%; /* 横幅いっぱいに広げる */
-  box-sizing: border-box;
-  padding: 12px 16px; /* 縦横のゆとり */
-  margin-top: 10px;
-  
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  color: #ffffff !important;
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #f7a8c4, #e87a9f); /* ピンクのグラデーション */
+  color: #ffffff;
   text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 0.9rem;
-  border-radius: 25px; /* 丸みを少し強めて可愛く */
-  box-shadow: 0 4px 12px rgba(255, 117, 140, 0.35);
+  border-radius: 25px;
   border: none;
-  outline: none;
+  font-weight: bold;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  text-decoration: none;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(232, 122, 159, 0.4); /* ふんわりピンクの影 */
 }
 
-/* 押した時に少し沈む演出（おまけ） */
-.play-btn:active {
-  transform: scale(0.98);
-  box-shadow: 0 2px 6px rgba(255, 117, 140, 0.3);
-}
-
-.play-btn span {
-  margin-right: 0; /* gapで制御するため指定解除 */
-  font-size: 0.8rem;
-}
-
-/* --- ポップアップ（モーダル）全体の背景 --- */
+/* ===================================================
+   🎬 モーダル再生枠
+=================================================== */
 .video-modal {
-  display: none; /* 通常時は隠す */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.85); /* 背景を暗くして映画館風に */
+  background-color: rgba(0, 0, 0, 0.85);
   z-index: 1000;
   justify-content: center;
   align-items: center;
@@ -281,28 +177,26 @@ h1 {
   box-sizing: border-box;
 }
 
-/* モーダルが開いている時の表示 */
 .video-modal.active {
   display: flex;
 }
 
-/* モーダルのコンテンツ枠 */
 .modal-content {
   position: relative;
   width: 100%;
-  max-width: 800px; /* パソコンで見ても大きすぎないサイズ */
+  max-width: 800px;
   background: #000;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* 「閉じる」ボタン */
 .modal-close {
   display: block;
   width: 100%;
   padding: 12px;
-  background: #ff85a2; /* サイトに合わせた可愛いピンク */
+  background: linear-gradient(135deg, #f7a8c4, #e87a9f);
   color: #fff;
   border: none;
   font-weight: bold;
@@ -311,7 +205,6 @@ h1 {
   text-align: center;
 }
 
-/* 16:9の動画プレイヤー枠 */
 .modal-player-wrapper {
   position: relative;
   width: 100%;
