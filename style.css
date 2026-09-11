@@ -112,7 +112,7 @@ h1 {
 
 /* 選択されているタブ */
 .tab-btn.active {
-  background: #763D49; /* 暗いローズ */
+  background: #F9C8D4; /* ベビーピンク */
   color: #ffffff;
   border-color: transparent;
   box-shadow: 0 3px 10px rgba(118, 61, 73, 0.4);
@@ -229,8 +229,8 @@ h1 {
   box-sizing: border-box;
   padding: 10px;
   margin-top: 6px;
-  background: #763D49; /* ★1番上の暗いローズ */
-  color: #ffffff !important; /* 白文字で見やすく */
+  background: #F9C8D4; /* ★べぴーピンク */
+  color: #393D3E !important; /* だーくちゃこーる */
   text-align: center;
   text-decoration: none;
   font-weight: bold;
@@ -285,7 +285,7 @@ h1 {
   display: block;
   width: 100%;
   padding: 12px;
-  background: #763D49; /* モーダルの閉じるボタンもローズに統一 */
+  background: #F9C8D4; /* モーダルの閉じるボタンもベビーピンクに統一 */
   color: #fff;
   border: none;
   font-weight: bold;
