@@ -1,7 +1,7 @@
 /* style.css (イチオシ枠＆カテゴリタブ付きデザイン) */
 body {
   /* 背景画像の設定 */
-  background-image: url('bg.jpg'); /* ←ここに画像ファイル名を入れる */
+  background-image: url('IMG_4732.jpeg'); /* ←ここに画像ファイル名を入れる */
   background-size: cover;          /* 画面いっぱいに綺麗に広げる */
   background-position: center;     /* 画像の中央を基準にする */
   background-repeat: no-repeat;    /* 画像を繰り返し表示させない */
