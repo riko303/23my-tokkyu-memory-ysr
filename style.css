@@ -1,22 +1,27 @@
-/* ===================================================
-   🌸 全体＆背景の設定
-=================================================== */
-body {
-  /* ★背景画像の設定（画像名をご自身のものに書き換えてください） */
-  background-image: url('IMG_5354.jpeg') !important;
-  background-size: cover;
-  background-position: center;
+/* --- 背景画像の固定（iPhone/Safari対応版） --- */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('IMG_5354.jpeg'); /* ←画像ファイル名 */
+  background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-color: #fff0f5; /* 画像が読み込まれるまでの可愛いピンク背景 */
+  background-size: cover;
+  z-index: -1; /* 動画カードの裏側に配置 */
+}
 
-  /* 文字フォントの設定（見やすいゴシック体） */
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: #333333;
   margin: 0;
   padding: 16px;
   box-sizing: border-box;
+  background-color: #fff0f5;
 }
+
 
 
 h1 {
