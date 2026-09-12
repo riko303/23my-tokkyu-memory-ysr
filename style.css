@@ -6,7 +6,7 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  /* ★保存した背景画像名を入れてください */
+  /* ★お使いの背景画像ファイル名 */
   background-image: url('IMG_5057.jpeg'); 
   background-position: center center;
   background-repeat: no-repeat;
@@ -16,20 +16,22 @@ body::before {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #393D3E; /* 優しいダークチャコール文字 */
+  color: #393D3E; /* ダークチャコール */
   margin: 0;
   padding: 16px;
   box-sizing: border-box;
-  background-color: #2b2b2c;
 }
 
+/* サイト大見出し（背景画像の上でもしっかり読める影付き） */
 h1 {
   font-size: 1.2rem;
   text-align: center;
   margin: 10px 0 16px 0;
-  color: #F9C8D4; /* 見出しは華やかなベビーピンク */
+  color: #ffffff; /* 白文字にしてくっきり */
   letter-spacing: 0.05em;
   font-weight: bold;
+  /* 濃い影をつけて文字を浮かび上がらせる */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7), 0 0 4px rgba(0, 0, 0, 0.5);
 }
 
 /* -----------------------------------
@@ -39,24 +41,26 @@ h1 {
   margin-bottom: 24px;
 }
 
+/* セクションタイトルも見やすく影を入れる */
 .section-title {
   font-size: 0.95rem;
   font-weight: bold;
-  color: #F9C8D4; /* タイトル */
+  color: #ffffff;
   margin-bottom: 8px;
   display: flex;
   align-items: center;
   gap: 4px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .pickup-card {
-  background: #F5F3E4; /* ★アイボリー */
+  background: #F5F3E4; /* アイボリー */
   max-width: 800px;
   margin: 0 auto 24px auto;
   border-radius: 20px;
   padding: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-  border: 2px solid #763D49; /* イチオシ枠は深みローズで強調 */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  border: 2px solid #763D49; /* 深いローズで少し引き締め */
 }
 
 .pickup-card .thumb-wrapper {
@@ -99,23 +103,25 @@ h1 {
 
 .tab-btn {
   background: #F5F3E4; /* アイボリー */
-  border: 1.5px solid #F9C8D4; /* ベビーピンクの枠線 */
+  border: 1.5px solid #393D3E; /* 細いチャコール枠 */
   color: #393D3E;
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.8rem;
   white-space: nowrap;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   transition: all 0.2s ease;
+  font-weight: 500;
 }
 
-/* 選択されているタブ */
+/* 選択されているタブ：ベビーピンク ＋ チャコール枠 */
 .tab-btn.active {
   background: #F9C8D4; /* ベビーピンク */
-  color: #ffffff;
-  border-color: transparent;
-  box-shadow: 0 3px 10px rgba(118, 61, 73, 0.4);
+  color: #393D3E; /* チャコール文字 */
+  border: 1.5px solid #393D3E;
+  font-weight: bold;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* -----------------------------------
@@ -133,8 +139,8 @@ h1 {
   background: #F5F3E4; /* ★アイボリー背景 */
   border-radius: 18px;
   padding: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border: 1.5px solid #F9C8D4; /* 優しいピンクの枠線 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border: 1.5px solid #F9C8D4; /* 優しいピンクの縁どり */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -175,13 +181,13 @@ h1 {
   border-radius: 12px;
 }
 
-/* NEWバッジ：ベビーピンク */
+/* NEWバッジ：暗いローズ（アクセント） */
 .badge-new {
   position: absolute;
   top: 6px;
   left: 6px;
-  background: #F9C8D4;
-  color: #763D49; /* 文字を深ローズにしてメリハリ */
+  background: #763D49;
+  color: #ffffff;
   font-size: 0.65rem;
   font-weight: bold;
   padding: 2px 8px;
@@ -192,7 +198,7 @@ h1 {
   position: absolute;
   bottom: 4px;
   right: 4px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
   color: #ffffff;
   font-size: 0.45rem;
   font-weight: 500;
@@ -201,6 +207,7 @@ h1 {
   line-height: 1.2;
 }
 
+/* カード内タイトル＆説明文（カードの中なのでくっきり見えます） */
 .video-title {
   font-size: 0.85rem;
   font-weight: bold;
@@ -218,7 +225,7 @@ h1 {
 }
 
 /* -----------------------------------
-   ▶ 再生ボタン（暗いローズ）
+   ▶ 再生ボタン（ベビーピンク＋細いチャコール枠）
 ----------------------------------- */
 .play-btn {
   display: flex;
@@ -227,25 +234,25 @@ h1 {
   gap: 6px;
   width: 100%;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 9px;
   margin-top: 6px;
-  background: #F9C8D4; /* ★べぴーピンク */
-  color: #393D3E !important; /* だーくちゃこーる */
+  background: #F9C8D4; /* ★ベビーピンク */
+  color: #393D3E !important; /* ★チャコール文字 */
+  border: 1.5px solid #393D3E; /* ★細いチャコールの枠線 */
   text-align: center;
   text-decoration: none;
   font-weight: bold;
   font-size: 0.85rem;
   border-radius: 25px;
-  box-shadow: 0 4px 10px rgba(118, 61, 73, 0.3);
-  border: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
   outline: none;
   cursor: pointer;
   transition: transform 0.1s ease, background-color 0.2s ease;
 }
 
 .play-btn:active {
-  transform: scale(0.98);
-  background: #5c2f39; /* 押した時にほんのり濃く */
+  transform: scale(0.97);
+  background: #f7b2c2; /* 押した時少しだけ濃いピンクに */
 }
 
 /* -----------------------------------
@@ -278,20 +285,21 @@ h1 {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-  border: 1px solid rgba(249, 200, 212, 0.3);
+  border: 1.5px solid #F9C8D4;
 }
 
 .modal-close {
   display: block;
   width: 100%;
   padding: 12px;
-  background: #F9C8D4; /* モーダルの閉じるボタンもベビーピンクに統一 */
-  color: #fff;
+  background: #F9C8D4;
+  color: #393D3E;
   border: none;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
+  border-top: 1.5px solid #393D3E;
 }
 
 .modal-player-wrapper {
@@ -308,4 +316,3 @@ h1 {
   height: 100%;
   border: none;
 }
-
