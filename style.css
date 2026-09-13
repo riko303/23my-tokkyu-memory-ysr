@@ -247,10 +247,10 @@ h1 {
   gap: 6px;
   width: 100%;
   box-sizing: border-box;
-  padding: 9px;
+  padding: 8.5px;
   background: linear-gradient(180deg, #F9C8D4 0%, #f7b2c2 100%); /* ほんのりグラデーション */
   color: #393D3E !important;
-  border: 1.5px solid #393D3E;
+  border: 1px solid #763D49;
   text-align: center;
   text-decoration: none;
   font-weight: 700;
