@@ -212,13 +212,13 @@ h1 {
   position: absolute;
   bottom: 5px;
   right: 5px;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.2);
   color: #ffffff;
-  font-size: 0.3rem;
+  font-size: 0.4rem;
   font-weight: 700;
-  padding: 1.5px 4.5px;
+  padding: 2px 4.5px;
   border-radius: 6px;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(2px);
 }
 
 .video-title {
